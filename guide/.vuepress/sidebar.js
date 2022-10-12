@@ -44,6 +44,8 @@ module.exports= {
 	getSideBar('Random','Random Functions'),
 	getSideBar('Text','Text Functions'),
 	getSideBar('Text/Condition','Condition Functions'),
+	getSideBar('Stickers','Sticker Functions'),
+	getSideBar('Events','Event Functions'),
 	getSideBar('Text/Embed','Embed functions'),
 	getSideBar('Text/Components','Button Functions'),
 	getSideBar('Text/Math','Math Functions'),
@@ -56,6 +58,9 @@ module.exports= {
 	getSideBar('Variables','Variables Functions'),
 	getSideBar('Bot','Bot Functions'),
 	getSideBar('Useful','Useful Functions'),
+	getSideBar('Cooldown','Cooldown functions'),
+	getSideBar('Unclassified','Unclassfied Functions'),
+	
 	getSideBar('Contribution_Info','Contribute'),
 ]
 }
