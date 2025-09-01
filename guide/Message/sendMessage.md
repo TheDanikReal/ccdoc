@@ -1,7 +1,7 @@
 # $sendMessage
 Sends a message to a sepecified channel
 
-#### Usage: `$sendMessage[message;return ID (yes/no) (Command will error, if not specified!)]`
+#### Usage: `$sendMessage[message;return ID (yes/no) (optional)]`
 <br/>
 <discord-messages>
 	<discord-message :bot="false" role-color="#ffcc9a" author="Member">
@@ -12,12 +12,16 @@ Sends a message to a sepecified channel
 	</discord-message>
 </discord-messages>
 
+#### Examples
+### Sending an embed
+![](https://i.imgur.com/A7UbSpj.png)
+
 ::: tip Note
-You can send embed using [Message Curl Format](../CodeReferences/ref.message_curl_format.md)
+You can send more structures like embed title, footer, buttons, menus through [Message Curl Format](../CodeReferences/ref.message_curl_format.md)
 :::
 
 ::: tip Related Functions
-[$channelSendMessage](../Text/channelSendMessage.md), to send a message to a custom channel
+[$channelSendMessage](../Message/channelSendMessage.md), to send a message to a custom channel
 :::
 
 

@@ -1,7 +1,7 @@
 # $objectCreate
 Creates a json object from the input 
 
-Use `$getObjectProperty` or $objectGet` to get a key value.
+Use `$getObjectProperty` or `$objectGet` to get a key value.
 #### Usage: `$objectCreate[JSON string]`
 <br/>
 <discord-messages>
@@ -17,16 +17,16 @@ Use `$getObjectProperty` or $objectGet` to get a key value.
 The example above shows how to save the object inside a variable and retrieve it later.
 - with an object you can save many properties inside a variable.
 ```sh
-$initvar[user;Data;{"Name":"none","Level":0,"isExpert":false"userId":0}]
+$initvar[user;Data;{"Name":"none","Level":0,"isExpert":false,"userId":0}]
 $objectCreate[$getuservar[Data]]
 $objectSet[Name;Wiki]
-$objectSet[level;20]
+$objectSet[Level;20]
 $objectSet[isExpert;true]
 $objectSet[userId;327996784012034050]
 
 /*You can change the value by using $objectSet. You can save it inside a var by using $getObject*/
-$setUserVar[data;$getObject]
-/* $getUserVar[data] will now return: {"Name":"Wiki","Level":20,"isExpert":true,"userId":327996784012034050}*/
+$setUserVar[Data;$getObject]
+/* $getUserVar[Data] will now return: {"Name":"Wiki","Level":20,"isExpert":true,"userId":327996784012034050}*/
 
 ```
 :::

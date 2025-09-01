@@ -1,7 +1,14 @@
-# $FUNCTION
-Creates a webhook for this channel
+# $createWebhook
+Creates a webhook
 
-::: warning bot has to have manage webhooks permission
+::: tip Webhooks
+Webhooks are a simple way of sending messages to different servers, or internal messages with custom user profiles.
+
+[Discord documentation](https://discord.com/developers/docs/resources/webhook#webhook-resource).
+:::
+
+::: warning Permissions
+The bot needs `manage webhooks` permission to execute this function
 :::
 
 #### Usage: `$createWebhook[channelID;name;avatar;returnWebhookID&Token (yes/no);separator]`

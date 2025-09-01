@@ -1,13 +1,17 @@
 # $awaitMessage
 
-Awaits a message from given user ID or everyone in this channel, and return it
+Awaits a message from given user ID or everyone in this channel, and returns it's message id/content.
 
 ## Usage
 
 ```bash
-$awaitMessage[MESSAGE (Optional);userid / everyone (optional, default everyone);timeout after (default and max:(60 x bot tier) seconds); return message id instead of content (yes/no)]
+$awaitMessage[MESSAGE (Optional);userid / everyone (optional, default everyone);timeout; return message id instead of content (yes/no)]
 return the user reply or undefined
 ```
+### Timeout
+The maximum time the bot waits for a user to send a message.\
+Accepts time in the format `10s` for example.\
+The max time is `60 x (bot tier + 1)` seconds, for example for tier 3 it would be `240` seconds.
 
 ### Example:
 <discord-messages>

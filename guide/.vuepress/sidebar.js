@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-function getSideBar(folder, title) {
+function getSideBar(folder, title, options={}) {
 	const extension = [".md"];
 
 	const files = fs
@@ -12,55 +12,76 @@ function getSideBar(folder, title) {
 				fs.statSync(path.join(`${__dirname}/../${folder}`, item)).isFile() &&
 				extension.includes(path.extname(item))
 		);
-    for (let i = 0; i < files.length; i++) {
-		let name = files[i]
-		//-files[i]={text:name,link:`/${folder}/${name}`}
-		files[i]=`/${folder}/${name}`
-	}
-	return { text: title, children: files };
+	let aiRefinedFiles = files.filter(file=>file.endsWith('_ai.md'));
+	
+	let children = [];
+	files.forEach(name=>{
+		if(name.endsWith('_ai.md'))	return;
+		if(aiRefinedFiles.includes(name.replace('.md', '_ai.md')))
+			children.push(`/${folder}/${name.replace('.md', '_ai.md')}`)
+		else
+			children.push(`/${folder}/${name}`)
+	})
+	return { text: title, children, collapsible:false,...options};
+
+	
 }
 
 module.exports= {
-	
+	sidebarDepth: 1,
+	sidebar:{
 	//getSideBar("functions","Functions")
 	'/':[
-	{
-			text: 'Guide',
-			children: [
-			'/'
-			]
-	},
-	getSideBar('Guide','Full Guide'),
-	getSideBar('Other','Other Information'),
-	getSideBar('Trigger','Trigger Types'),
-	//getSideBar('Templates','Templates'),
-	getSideBar('Member','Member Functions'),
-	getSideBar('Channel','Channel Functions'),
-	getSideBar('Message','Message Functions'),
-	getSideBar('Interaction','Interaction Functions'),
-	getSideBar('Threads','Threads Functions'),
-	getSideBar('Role','Role Functions'),
-	getSideBar('Server','Server Functions'),
-	getSideBar('Random','Random Functions'),
-	getSideBar('Text','Text Functions'),
-	getSideBar('Text/Condition','Condition Functions'),
-	getSideBar('Stickers','Sticker Functions'),
-	getSideBar('Events','Event Functions'),
-	getSideBar('Text/Embed','Embed functions'),
-	getSideBar('Text/Components','Button Functions'),
-	getSideBar('Text/Math','Math Functions'),
-	getSideBar('Text/textSplit','Text Split Functions'),
-	getSideBar('Text/Array','Array Functions'),
-	getSideBar('Text/Object','Object Functions'),
-	getSideBar('Text/isandhas','Is and Has Functions'),
-	getSideBar('Text/only','Only Functions'),
-	getSideBar('Date','Date Functions'),
-	getSideBar('Variables','Variables Functions'),
-	getSideBar('Bot','Bot Functions'),
-	getSideBar('Useful','Useful Functions'),
-	getSideBar('Cooldown','Cooldown functions'),
-	getSideBar('Unclassified','Unclassfied Functions'),
-	
-	getSideBar('Contribution_Info','Contribute'),
-]
+		{
+				text: 'Guide',
+				children: [
+				'/'
+				]
+		},
+		
+		getSideBar('Guide','Full Guide'),
+		getSideBar('Trigger','Trigger Types'),
+		getSideBar('Tutorials','Tutorials & Examples'),
+
+		getSideBar('Other','Other Information'),
+		// getSideBar('Templates','Templates'),
+		{    
+			text: 'Functions',
+			collapsible:true,
+			children:[
+			getSideBar('Member','Member Functions',{collapsible:true}),
+			getSideBar('Channel','Channel Functions',{collapsible:true}),
+			getSideBar('Message','Message Functions',{collapsible:true}),
+			getSideBar('Interaction','Interaction Functions',{collapsible:true}),
+			getSideBar('Threads','Threads Functions',{collapsible:true}),
+			getSideBar('Role','Role Functions',{collapsible:true}),
+			getSideBar('Server','Server Functions',{collapsible:true}),
+			getSideBar('Random','Random Functions',{collapsible:true}),
+			getSideBar('Text','Text Functions',{collapsible:true}),
+			getSideBar('Text/Condition','Condition Functions',{collapsible:true}),
+			getSideBar('Stickers','Sticker Functions',{collapsible:true}),
+			getSideBar('Events','Event Functions',{collapsible:true}),
+			getSideBar('Timeout','User Timeout Functions',{collapsible:true}),
+			getSideBar('Text/Embed','Embed functions',{collapsible:true}),
+			getSideBar('Text/Components','Button Functions',{collapsible:true}),
+			getSideBar('Text/Math','Math Functions',{collapsible:true}),
+			getSideBar('Text/textSplit','Text Split Functions',{collapsible:true}),
+			getSideBar('Text/Array','Array Functions',{collapsible:true}),
+			getSideBar('Text/Object','Object Functions',{collapsible:true}),
+			getSideBar('Text/isandhas','Is and Has Functions',{collapsible:true}),
+			getSideBar('Text/only','Only Functions',{collapsible:true}),
+			getSideBar('Text/Regex','Regex Functions',{collapsible:true}),
+			getSideBar('Date','Date Functions',{collapsible:true}),
+			getSideBar('Variables','Variables Functions',{collapsible:true}),
+			getSideBar('Bot','Bot Functions',{collapsible:true}),
+			getSideBar('Useful','Useful Functions',{collapsible:true}),
+			getSideBar('Cooldown','Cooldown functions',{collapsible:true}),
+			getSideBar('Request','Http Requests functions',{collapsible:true}),
+			getSideBar('Image','Image Builder functions',{collapsible:true}),
+			// getSideBar('Unclassified','Unclassfied Functions',{collapsible:true})
+		]
+	},		
+		getSideBar('Contribution_Info','Contribute'),
+	]
+	}
 }

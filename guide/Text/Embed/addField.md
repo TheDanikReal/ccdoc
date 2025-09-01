@@ -1,14 +1,14 @@
 #  $addField
-Adds fields to a message
+Adds fields to a message embed.
 
 #### Usage: `$addField[title;value;inline(yes/no default=yes)(optional)]`
 <br/>
 <discord-messages>
 	<discord-message :bot="false" role-color="#ffcc9a" author="Member">
-		!!exec $addField[title;value;no]
-        $addField[title2;value2]
-        $addField[title3;value3]
-        $addField[title4;value4]
+		!!exec $addField[title;value;no] <br/>
+        $addField[title2;value2] <br/>
+        $addField[title3;value3] <br/>
+        $addField[title4;value4] <br/>
 	</discord-message>
 	<discord-message :bot="true" role-color="#0099ff" author="Custom Command" avatar="https://media.discordapp.net/avatars/725721249652670555/781224f90c3b841ba5b40678e032f74a.webp">
 		<discord-embed

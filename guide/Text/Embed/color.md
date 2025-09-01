@@ -1,7 +1,7 @@
 #  $color
 sets the color of the embed
 
-#### Usage: `$color[hex or colorname or RANDOM]`
+#### Usage: `$color[hex/colorname/random/transparent]`
 <br/>
 <discord-messages>
 	<discord-message :bot="false" role-color="#ffcc9a" author="Member">
@@ -18,7 +18,7 @@ sets the color of the embed
 
 ::: tip Do you want to add an embed inside a Function as paramter like $sendmessage[text]
 
-Use: `{color:hex or colorname or RANDOM}`
+Use: `{color:hex or colorname or RANDOM or TRANSPARENT}`
 Example: `{color:#0099ff}`
 :::
 

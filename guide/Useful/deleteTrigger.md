@@ -1,10 +1,10 @@
 # $deleteTrigger
 
-delete a command with token, **empty token = delete current command**
+Delete a command using its token, **empty token = delete current command**
 
 ## Usage
 
 ```bash
-$deleteTrigger[Token]
+$deleteTrigger[Token;Delete Current Trigger If Empty (yes/no, default yes)]
 ```
 

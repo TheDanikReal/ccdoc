@@ -1,14 +1,18 @@
 # $awaitMenu
 
-To wait for a menu option to be selected and return the selected options values\
-In case of no option selected, it return **undefined**\
-In case of multiple values selected, all of them will return with `,` as seperator
+To wait for a menu option to be selected and return the selected option(s) values.
+If nothing is selected, it returns `undefined`.
+If multiple values are selected, all of them will be returned, separated with `,`.
 
 ## Usage
 
 ```bash
 $awaitMenu[Message (optional);user id (optional, default:author);timeout (optional, default:15s);menu id1 (optional);menu id2...]
 ```
+### Timeout
+The maximum time the bot waits for a user to select an option.\
+Accepts time in the format `10s` for example.\
+The max time is `60 x (bot tier + 1)` seconds, for example for tier 3 it would be `240` seconds.
 
 ### Example:
 <discord-messages>

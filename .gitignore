@@ -1,9 +1,12 @@
 node_modules
 .temp
 .cache
-package-lock.json
 dist
 .gitpod.yml
 data.json
-build.sh
+build*.sh
 ignore/*
+.DS_Store
+guide/.vuepress/public/images/*
+.vscode
+OnTemplate.md

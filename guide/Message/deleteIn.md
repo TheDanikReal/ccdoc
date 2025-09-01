@@ -1,5 +1,5 @@
 # $deleteIn
-Deletes a message send, after a certain time
+Deletes a message sent after a certain time
 
 #### Usage: `$deleteIn[time]`
 
@@ -7,9 +7,9 @@ Deletes a message send, after a certain time
 `$deleteIn[10s]`
 
 ::: tip Related Functions
-[$deleteMessage](../Text/deleteMessage.md), to delete a message in the server or DMs
+[$deleteMessage](../Message/deleteMessage.md), to delete a message in the server or DMs
 
-[$deletecommand](../Text/deletecommand.md), to delete the message used to trigger the command
+[$deletecommand](../Message/deletecommand.md), to delete the message used to trigger the command
 :::
 
 
